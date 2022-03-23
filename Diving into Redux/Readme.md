@@ -10,5 +10,11 @@ Context is not optimized for high frequency state changes.
 ### How redux works?
 
 Redux has central data(state) store.
+
 Redux has reducer function, which which is responsible for mutating(=changing) store data.
+
 Redux has actions which are dispatched by react components.
+
+Actions are forworded to reducer function.
+
+Based on these actions reducer function make changes in state in store.
