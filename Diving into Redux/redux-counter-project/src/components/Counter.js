@@ -2,7 +2,7 @@ import classes from "./Counter.module.css";
 
 // In this component we need to connect to store of redux, we can do that using:
 import { useSelector, useDispatch } from "react-redux";
-import { useReducer } from "react";
+
 // useSelector lets us use a part of state we stored in store.
 // We can also use useStore hook to access store.
 
@@ -22,6 +22,7 @@ const Counter = () => {
   };
 
   const increaseHandler = () => {
+    // Here amount is payload to action.
     dispatch({ type: "INCREASE", amount: 4 });
   };
 
@@ -29,12 +30,18 @@ const Counter = () => {
     dispatch({ type: "DECREMENT" });
   };
 
-  const toggleCounterHandler = () => {};
+  const toggleCounterHandler = () => {
+    dispatch({ type: "HIDE_COUNTER" });
+  };
+
+  const isCounterVisible = useSelector((state) => {
+    return state.showCounter;
+  });
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{counter}</div>
+      {isCounterVisible && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={increaseHandler}>Increase by 4</button>
