@@ -5,6 +5,9 @@ const initialState = {
   showCounter: true,
 };
 
+// For correctly implementing Redux, in reducer function for each dispatched action, we should always return new object.
+// We should return all state in object each time.
+// e.g. showCounter state is not useful in "INCREMENT" or "DECREMENT" action, still we must specify them.
 const toggleCounterReducer = (state = initialState, action) => {
   if (action.type === "INCREMENT") {
     return {
