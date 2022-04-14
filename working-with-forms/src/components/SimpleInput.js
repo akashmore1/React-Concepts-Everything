@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // Learn useRef as well
 
 // In real life, we will only use either useState or useRef. Not both.
@@ -20,6 +20,20 @@ const SimpleInput = (props) => {
 
   // Because of above issue we will maintain another state =>
   const [eneteredNameTouched, setEnteredNameTouched] = useState(false);
+
+  // Overall form Validity state can be achieved by useEffet.
+  /*
+   useEffect(() => {
+     if(all valid state enetedAgeIsValid e.g enteredAge && enteredName){
+       setFormValid(true); -> Manage another state for fornIsValid.
+
+     }else{
+       setFormValid(false);
+     }
+   }, [enteredNameIsValid, enetedAgeIsValid]);
+
+   // We can use formIsValid state to enable and disable submit button.
+  */
 
   const keyStrokeHandler = (event) => {
     setInputValue(event.target.value);
