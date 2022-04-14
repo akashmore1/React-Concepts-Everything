@@ -14,6 +14,8 @@ const SimpleInput = (props) => {
   // Initially enteredName should be invalid so initial state must be false.
   // This has a problem when user reloads page, by default invalid input error is shown.
   // This a not recommended user experience.
+  // We don't need following state, we can implement validation using inputValue and touched value only.
+  // enteredNameIsValid = inputValue && eneteredNameTouched  -> /* In this way we can implement */
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(false);
 
   // Because of above issue we will maintain another state =>
