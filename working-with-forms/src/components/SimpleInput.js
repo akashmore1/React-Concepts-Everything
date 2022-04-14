@@ -21,9 +21,8 @@ const SimpleInput = (props) => {
 
   const keyStrokeHandler = (event) => {
     setInputValue(event.target.value);
-    if (inputValue.trim() !== "") {
+    if (event.target.value.trim() !== "") {
       setEnteredNameIsValid(true);
-      return;
     }
   };
 
