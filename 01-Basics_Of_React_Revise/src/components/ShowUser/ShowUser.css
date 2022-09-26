@@ -15,4 +15,51 @@
   overflow: scroll;
   position: absolute;
   top: 20%;
+  padding: 1rem;
+}
+
+tr th,
+tr td {
+  background: #d9d9d9;
+  padding: 1.5rem;
+  width: 14rem;
+  text-align: left;
+}
+
+tr td {
+  padding-left: 2.4rem;
+}
+
+tr th {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+
+  color: #5b5656;
+}
+
+tr td {
+  font-weight: 700;
+  font-size: 28.9231px;
+  line-height: 35px;
+
+  color: #5b5656;
+}
+
+.btn__table {
+  width: 84%;
+}
+
+table,
+tr,
+td,
+thead,
+tbody {
+  border: none;
+}
+
+.line {
+  height: 0px;
+  border: 0.5px solid rgb(255, 255, 255);
+  width: 424%;
 }
