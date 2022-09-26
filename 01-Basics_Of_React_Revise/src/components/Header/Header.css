@@ -1,6 +1,7 @@
 .header__section {
   border-bottom: 1px solid #aea1a1;
-  min-height: 10vh;
+  height: 10vh;
+  min-height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
