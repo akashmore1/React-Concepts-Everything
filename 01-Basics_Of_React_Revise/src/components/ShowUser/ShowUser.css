@@ -1,4 +1,19 @@
 .show-user__section {
   width: 63%;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.show-user__card {
+  width: 90%;
+  background: #d9d9d9;
+  height: 70%;
+  max-height: 66rem;
+  min-height: 20rem;
+  border-radius: 5px;
+  overflow: scroll;
+  position: absolute;
+  top: 20%;
 }

@@ -1,4 +1,17 @@
 .add-user__section {
   width: 37%;
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.add-user__card {
+  width: 87%;
+  background: #d9d9d9;
+  height: 43%;
+  max-height: 17rem;
+  min-height: 16rem;
+  border-radius: 5px;
+  position: absolute;
+  top: 6%;
 }
