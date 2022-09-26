@@ -48,6 +48,7 @@ tr td {
 
 .btn__table {
   width: 84%;
+  min-width: 100px;
 }
 
 table,
@@ -62,4 +63,43 @@ tbody {
   height: 0px;
   border: 0.5px solid rgb(255, 255, 255);
   width: 424%;
+}
+
+@media (max-width: 1400px) {
+  .show-user__card {
+    width: 90%;
+    background: #d9d9d9;
+    height: 70%;
+    max-height: 30rem;
+    min-height: 18rem;
+    border-radius: 5px;
+    overflow: scroll;
+    padding: 1rem;
+    position: static;
+    max-width: 1000px;
+  }
+
+  .show-user__section {
+    width: 100%;
+  }
+}
+
+@media (max-height: 544px) {
+  .show-user__card {
+    width: 90%;
+    background: #d9d9d9;
+    height: 70%;
+    max-height: 30rem;
+    min-height: 18rem;
+    border-radius: 5px;
+    overflow: scroll;
+    padding: 1rem;
+    position: static;
+    max-width: 1000px;
+  }
+
+  .show-user__section {
+    width: 100%;
+    padding-top: 3rem;
+  }
 }

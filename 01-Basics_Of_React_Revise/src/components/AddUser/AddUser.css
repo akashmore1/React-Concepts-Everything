@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  overflow: scroll;
 }
 
 .add-user__card {
@@ -16,4 +17,49 @@
   top: 6%;
   padding: 1rem;
   min-width: 414px;
+  max-width: 500px;
+  overflow: scroll;
+}
+
+@media (max-width: 1400px) {
+  .add-user__card {
+    width: 87%;
+    background: #d9d9d9;
+    height: 43%;
+    max-height: 17rem;
+    min-height: 18rem;
+    border-radius: 5px;
+    padding: 1rem;
+    min-width: 414px;
+    position: static;
+    overflow: scroll;
+  }
+
+  .add-user__section {
+    width: 100%;
+    padding-top: 3rem;
+    overflow: scroll;
+  }
+}
+
+@media (max-height: 544px) {
+  .add-user__card {
+    width: 87%;
+    background: #d9d9d9;
+    height: 43%;
+    max-height: 17rem;
+    min-height: 18rem;
+    border-radius: 5px;
+    padding: 0.2rem;
+    min-width: 394px;
+    position: static;
+    overflow: scroll;
+  }
+
+  .add-user__section {
+    width: 40%;
+    padding-top: 3rem;
+    overflow: scroll;
+    padding-left: 2rem;
+  }
 }
