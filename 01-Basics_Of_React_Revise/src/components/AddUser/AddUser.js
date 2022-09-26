@@ -3,11 +3,11 @@ import React from "react";
 import Form from "../ui/Form";
 import "./AddUser.css";
 
-const AddUser = () => {
+const AddUser = ({ setUsers, users }) => {
   return (
     <section className="add-user__section">
       <div className="add-user__card">
-        <Form></Form>
+        <Form setUsers={setUsers} users={users}></Form>
       </div>
     </section>
   );

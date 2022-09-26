@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "./components/Header/Header";
 import AddUser from "./components/AddUser/AddUser";
@@ -7,11 +7,13 @@ import ShowUser from "./components/ShowUser/ShowUser";
 import "./App.css";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  console.log(users);
   return (
     <div>
       <Header />
       <section className="body__section">
-        <AddUser />
+        <AddUser setUsers={setUsers} users={users} />
         <ShowUser />
       </section>
     </div>
