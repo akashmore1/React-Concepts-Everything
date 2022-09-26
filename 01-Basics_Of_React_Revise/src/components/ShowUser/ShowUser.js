@@ -2,8 +2,14 @@ import React from "react";
 
 import "./ShowUser.css";
 
-const ShowUser = ({ users }) => {
+const ShowUser = ({ users, setUsers }) => {
   const rows = users.map((user) => {
+    const onDeleteUser = () => {
+      const updatedUsers = users.filter((e) => {
+        return e.id !== user.id;
+      });
+      setUsers(updatedUsers);
+    };
     return (
       <>
         <tr>
@@ -13,7 +19,9 @@ const ShowUser = ({ users }) => {
             <button className="btn btn__table">Update</button>
           </td>
           <td>
-            <button className="btn btn__table">Delete</button>
+            <button className="btn btn__table" onClick={onDeleteUser}>
+              Delete
+            </button>
           </td>
         </tr>
         <div className="line"></div>

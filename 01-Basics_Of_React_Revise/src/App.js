@@ -15,7 +15,7 @@ function App() {
       <Header />
       <section className="body__section">
         <AddUser setUsers={setUsers} users={users} />
-        {isUserTableShown && <ShowUser users={users} />}
+        {isUserTableShown && <ShowUser users={users} setUsers={setUsers} />}
       </section>
     </div>
   );
