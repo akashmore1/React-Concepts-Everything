@@ -1,3 +1,4 @@
 .body__section {
   min-height: 90vh;
+  display: flex;
 }
