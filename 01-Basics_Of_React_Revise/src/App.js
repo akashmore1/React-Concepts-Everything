@@ -8,13 +8,14 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
-  console.log(users);
+
+  const isUserTableShown = users.length !== 0;
   return (
     <div>
       <Header />
       <section className="body__section">
         <AddUser setUsers={setUsers} users={users} />
-        <ShowUser />
+        {isUserTableShown && <ShowUser users={users} />}
       </section>
     </div>
   );

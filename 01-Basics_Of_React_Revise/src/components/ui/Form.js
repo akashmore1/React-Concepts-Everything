@@ -9,7 +9,7 @@ const Form = ({ setUsers, users }) => {
 
   const onSaveUser = (e) => {
     e.preventDefault();
-    user.push({ name: name, age: age });
+    user.push({ name: name, age: age, id: users.length });
     setUsers([...users, ...user]);
     setName("");
     setAge("");

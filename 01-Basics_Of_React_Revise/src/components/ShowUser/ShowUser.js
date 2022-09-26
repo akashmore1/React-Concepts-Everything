@@ -2,7 +2,25 @@ import React from "react";
 
 import "./ShowUser.css";
 
-const ShowUser = () => {
+const ShowUser = ({ users }) => {
+  const rows = users.map((user) => {
+    return (
+      <>
+        <tr>
+          <td>{user.name}</td>
+          <td>{user.age}</td>
+          <td>
+            <button className="btn btn__table">Update</button>
+          </td>
+          <td>
+            <button className="btn btn__table">Delete</button>
+          </td>
+        </tr>
+        <div className="line"></div>
+      </>
+    );
+  });
+
   return (
     <section className="show-user__section">
       <div className="show-user__card">
@@ -16,30 +34,7 @@ const ShowUser = () => {
             </tr>
           </thead>
           <div className="line"></div>
-          <tbody>
-            <tr>
-              <td>Mark</td>
-              <td>24</td>
-              <td>
-                <button className="btn btn__table">Update</button>
-              </td>
-              <td>
-                <button className="btn btn__table">Delete</button>
-              </td>
-            </tr>
-            <div className="line"></div>
-            <tr>
-              <td>Jacob</td>
-              <td>30</td>
-              <td>
-                <button className="btn btn__table">Update</button>
-              </td>
-              <td>
-                <button className="btn btn__table">Delete</button>
-              </td>
-            </tr>
-            <div className="line"></div>
-          </tbody>
+          <tbody>{rows}</tbody>
         </table>
       </div>
     </section>
