@@ -16,6 +16,10 @@ const Form = () => {
         </label>
         <input type="number" id="age" name="age"></input>
       </div>
+      <div>
+        <button className="btn">Save</button>
+        <button className="btn">Cancel</button>
+      </div>
     </form>
   );
 };

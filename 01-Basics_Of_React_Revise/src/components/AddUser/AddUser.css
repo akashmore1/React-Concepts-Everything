@@ -10,9 +10,10 @@
   background: #d9d9d9;
   height: 43%;
   max-height: 17rem;
-  min-height: 16rem;
+  min-height: 18rem;
   border-radius: 5px;
   position: absolute;
   top: 6%;
   padding: 1rem;
+  min-width: 414px;
 }

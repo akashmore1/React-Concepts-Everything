@@ -1,5 +1,6 @@
 form {
   background: #d9d9d9;
+  padding-left: 1%;
 }
 
 form div {
@@ -7,7 +8,7 @@ form div {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin: 2rem;
+  margin: 2rem 1rem;
   /* border: 1px solid black; */
 }
 
