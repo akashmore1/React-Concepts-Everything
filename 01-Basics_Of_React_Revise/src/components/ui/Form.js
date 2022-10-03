@@ -53,7 +53,11 @@ const Form = ({ setUsers, users, showButtons }) => {
       </div>
       {showButtons && (
         <div>
-          <button className="btn" onClick={onSaveUser}>
+          <button
+            className="btn"
+            onClick={onSaveUser}
+            disabled={!name || !age || age < 0}
+          >
             Save
           </button>
           <button className="btn" onClick={onCancelUser}>

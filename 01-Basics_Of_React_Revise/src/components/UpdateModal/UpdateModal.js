@@ -73,7 +73,11 @@ const UpdateModal = ({ setIsUpdateModalShown, user, users, setUsers }) => {
           </form>
         </div>
         <div className="card__action">
-          <button className="btn" onClick={onUpdate}>
+          <button
+            className="btn"
+            onClick={onUpdate}
+            disabled={!name || !age || age < 0}
+          >
             Update
           </button>
           <button
