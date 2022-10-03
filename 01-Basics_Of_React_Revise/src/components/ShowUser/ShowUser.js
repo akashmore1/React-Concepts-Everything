@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
+import UpdateModal from "../UpdateModal/UpdateModal";
 import "./ShowUser.css";
 
 const ShowUser = ({ users, setUsers }) => {
+  const [isUpdateModalShown, setIsUpdateModalShown] = useState(false);
+
   const rows = users.map((user) => {
     const onDeleteUser = () => {
       const updatedUsers = users.filter((e) => {
@@ -10,13 +13,22 @@ const ShowUser = ({ users, setUsers }) => {
       });
       setUsers(updatedUsers);
     };
-    return (
+
+    const onUpdateUser = () => {
+      setIsUpdateModalShown(true);
+    };
+
+    return isUpdateModalShown ? (
+      <UpdateModal />
+    ) : (
       <>
         <tr>
           <td>{user.name}</td>
           <td>{user.age}</td>
           <td>
-            <button className="btn btn__table">Update</button>
+            <button className="btn btn__table" onClick={onUpdateUser}>
+              Update
+            </button>
           </td>
           <td>
             <button className="btn btn__table" onClick={onDeleteUser}>
