@@ -19,7 +19,7 @@ const ShowUser = ({ users, setUsers }) => {
     };
 
     return isUpdateModalShown ? (
-      <UpdateModal />
+      <UpdateModal setIsUpdateModalShown={setIsUpdateModalShown} />
     ) : (
       <>
         <tr>

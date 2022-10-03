@@ -2,8 +2,65 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(22, 20, 20, 0.7);
   z-index: 1;
   top: 0;
   left: 0;
+}
+
+.card {
+  position: fixed;
+  width: 724px;
+  height: 492px;
+  left: 502px;
+  top: 249px;
+  background-color: rgba(217, 217, 217, 1);
+  z-index: 2;
+  border-radius: 10px;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card > div {
+  border: 1px solid black;
+  background-color: rgba(217, 217, 217, 1);
+}
+
+.card__header {
+  height: 4.2rem;
+  background-color: rgba(217, 217, 217, 1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header__title {
+  background-color: rgba(217, 217, 217, 1);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 40px;
+  line-height: 58px;
+
+  color: #5b5656;
+}
+
+.card-header__close {
+  background-color: rgba(217, 217, 217, 1);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 40px;
+  line-height: 58px;
+  cursor: pointer;
+  color: #5b5656;
+}
+
+.card__form {
+  height: 13rem;
+}
+
+.card__action {
+  height: 4.2rem;
 }
