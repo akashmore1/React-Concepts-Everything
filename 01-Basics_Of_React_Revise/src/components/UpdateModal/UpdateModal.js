@@ -9,8 +9,13 @@ const UpdateModal = ({ setIsUpdateModalShown, user, users, setUsers }) => {
   console.log("user", user);
 
   const onUpdate = () => {
-    const userObj = { name: name, age: age, id: user.id };
-    users.splice(user.id, 1, userObj);
+    users.forEach((e) => {
+      if (e.id === user.id) {
+        e.name = name;
+        e.age = age;
+      }
+    });
+
     setUsers(users);
     setIsUpdateModalShown(false);
   };

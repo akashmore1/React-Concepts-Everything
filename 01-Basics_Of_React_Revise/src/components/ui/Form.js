@@ -9,7 +9,7 @@ const Form = ({ setUsers, users, showButtons }) => {
 
   const onSaveUser = (e) => {
     e.preventDefault();
-    user.push({ name: name, age: age, id: users.length });
+    user.push({ name: name, age: age, id: Math.floor(Math.random() * 10000) });
     setUsers([...users, ...user]);
     setName("");
     setAge("");

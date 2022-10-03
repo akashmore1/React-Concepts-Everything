@@ -15,14 +15,14 @@ const ShowUser = ({ users, setUsers }) => {
     };
 
     const onUpdateUser = () => {
+      const userObj = {
+        id: user.id,
+        name: user.name,
+        age: user.age,
+      };
+      console.log("userrrr", userObj);
       setIsUpdateModalShown(true);
       setSelectedUser(userObj);
-    };
-
-    const userObj = {
-      id: user.id,
-      name: user.name,
-      age: user.age,
     };
 
     return (
