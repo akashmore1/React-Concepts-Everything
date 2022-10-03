@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-const Form = ({ setUsers, users }) => {
+const Form = ({ setUsers, users, showButtons }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
@@ -51,14 +51,16 @@ const Form = ({ setUsers, users }) => {
           }}
         ></input>
       </div>
-      <div>
-        <button className="btn" onClick={onSaveUser}>
-          Save
-        </button>
-        <button className="btn" onClick={onCancelUser}>
-          Cancel
-        </button>
-      </div>
+      {showButtons && (
+        <div>
+          <button className="btn" onClick={onSaveUser}>
+            Save
+          </button>
+          <button className="btn" onClick={onCancelUser}>
+            Cancel
+          </button>
+        </div>
+      )}
     </form>
   );
 };

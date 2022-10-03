@@ -7,7 +7,7 @@ const AddUser = ({ setUsers, users }) => {
   return (
     <section className="add-user__section">
       <div className="add-user__card">
-        <Form setUsers={setUsers} users={users}></Form>
+        <Form setUsers={setUsers} users={users} showButtons={true}></Form>
       </div>
     </section>
   );
