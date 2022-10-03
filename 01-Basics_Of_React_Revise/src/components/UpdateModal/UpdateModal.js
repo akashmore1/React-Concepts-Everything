@@ -2,7 +2,19 @@ import React, { useState } from "react";
 
 import "./UpdateModal.css";
 
-const UpdateModal = ({ setIsUpdateModalShown }) => {
+const UpdateModal = ({ setIsUpdateModalShown, user, users, setUsers }) => {
+  const [name, setName] = useState(user.name || "");
+  const [age, setAge] = useState(user.age || "");
+
+  console.log("user", user);
+
+  const onUpdate = () => {
+    const userObj = { name: name, age: age, id: user.id };
+    users.splice(user.id, 1, userObj);
+    setUsers(users);
+    setIsUpdateModalShown(false);
+  };
+
   return (
     <>
       <div
@@ -33,9 +45,9 @@ const UpdateModal = ({ setIsUpdateModalShown }) => {
                 type="text"
                 id="name"
                 name="name"
-                // value={name}
+                value={name}
                 onChange={(e) => {
-                  // setName(e.target.value);
+                  setName(e.target.value);
                 }}
               ></input>
             </div>
@@ -47,16 +59,18 @@ const UpdateModal = ({ setIsUpdateModalShown }) => {
                 type="number"
                 id="age"
                 name="age"
-                // value={age}
+                value={age}
                 onChange={(e) => {
-                  // setAge(e.target.value);
+                  setAge(e.target.value);
                 }}
               ></input>
             </div>
           </form>
         </div>
         <div className="card__action">
-          <button className="btn">Update</button>
+          <button className="btn" onClick={onUpdate}>
+            Update
+          </button>
           <button
             className="btn"
             onClick={() => {

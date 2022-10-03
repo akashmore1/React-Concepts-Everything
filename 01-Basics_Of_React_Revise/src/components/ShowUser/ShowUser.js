@@ -5,7 +5,7 @@ import "./ShowUser.css";
 
 const ShowUser = ({ users, setUsers }) => {
   const [isUpdateModalShown, setIsUpdateModalShown] = useState(false);
-
+  const [selectedUser, setSelectedUser] = useState({});
   const rows = users.map((user) => {
     const onDeleteUser = () => {
       const updatedUsers = users.filter((e) => {
@@ -16,11 +16,16 @@ const ShowUser = ({ users, setUsers }) => {
 
     const onUpdateUser = () => {
       setIsUpdateModalShown(true);
+      setSelectedUser(userObj);
     };
 
-    return isUpdateModalShown ? (
-      <UpdateModal setIsUpdateModalShown={setIsUpdateModalShown} />
-    ) : (
+    const userObj = {
+      id: user.id,
+      name: user.name,
+      age: user.age,
+    };
+
+    return (
       <>
         <tr>
           <td>{user.name}</td>
@@ -42,22 +47,32 @@ const ShowUser = ({ users, setUsers }) => {
   });
 
   return (
-    <section className="show-user__section">
-      <div className="show-user__card">
-        <table cellspacing="0" cellpadding="0">
-          <thead>
-            <tr className="trr">
-              <th>Name</th>
-              <th>Age</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <div className="line"></div>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
+    <>
+      {isUpdateModalShown && (
+        <UpdateModal
+          setIsUpdateModalShown={setIsUpdateModalShown}
+          user={selectedUser}
+          users={users}
+          setUsers={setUsers}
+        />
+      )}
+      <section className="show-user__section">
+        <div className="show-user__card">
+          <table cellspacing="0" cellpadding="0">
+            <thead>
+              <tr className="trr">
+                <th>Name</th>
+                <th>Age</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <div className="line"></div>
+            <tbody>{rows}</tbody>
+          </table>
+        </div>
+      </section>
+    </>
   );
 };
 
