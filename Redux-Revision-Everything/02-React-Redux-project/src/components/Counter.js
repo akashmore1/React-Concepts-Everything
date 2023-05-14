@@ -21,10 +21,24 @@ const Counter = () => {
         </button>
         <button
           onClick={() => {
+            dispatch({ type: "increment", payload: 4 });
+          }}
+        >
+          Increment by 4
+        </button>
+        <button
+          onClick={() => {
             dispatch({ type: "decrement" });
           }}
         >
           Decrement
+        </button>
+        <button
+          onClick={() => {
+            dispatch({ type: "decrement", payload: 4 });
+          }}
+        >
+          Decrement by 4
         </button>
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
